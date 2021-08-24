@@ -38,9 +38,10 @@ const server = http.createServer((req,  res) => {
    res.end();
 });
 }
-// else{
-//     console.log("err");
-// }
+else{
+    res.writeHead(404, {"content-type" : "text/html"});
+    res.end('<h1> 404 not Found </h1>');
+}  
     
 });
 
