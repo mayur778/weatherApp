@@ -20,8 +20,7 @@ const replaceVal = (tempVal, orgVal) => {
 
 
 const server = http.createServer((req,  res) => {
-    if(req.url == "/")
-    {
+    
      requests("http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=5f287c0a9641e17f177111ab0a823727")
     .on('data', (chunk) => {
         const objData = JSON.parse(chunk);
@@ -37,11 +36,8 @@ const server = http.createServer((req,  res) => {
  
    res.end();
 });
-}
-else{
-    res.writeHead(404, {"content-type" : "text/html"});
-    res.end('<h1> 404 not Found </h1>');
-}  
+
+  
     
 });
 
